@@ -9,8 +9,8 @@ namespace TheatricalPlayersRefactoringKata
         public string Type { get => _type; set => _type = value; }
 
         public Play(string name, string type) {
-            this._name = name;
-            this._type = type;
+            _name = name;
+            _type = type;
         }
     }
 }
