@@ -10,4 +10,6 @@ public class InvoiceInfo
     
     public int VolumeCredits { get; set; }
     public CultureInfo CultureInfo { get; set; }
+
+    public float TotalAmount { get; set; } = 0;
 }
