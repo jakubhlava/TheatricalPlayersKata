@@ -15,7 +15,9 @@ namespace TheatricalPlayersRefactoringKata
 
             var infos = new List<PlayInfo>();
             var invoiceInfo = new InvoiceInfo { PlayInfos = infos, VolumeCredits = volumeCredits };
-
+            
+            invoiceInfo.Customer = invoice.Customer;
+            invoiceInfo.CultureInfo = new CultureInfo("en-US");
 
             var  cultureInfo = new CultureInfo("en-US");
 
@@ -57,9 +59,13 @@ namespace TheatricalPlayersRefactoringKata
             var currentPrinter = new CliInvoicePrinter();
             result += String.Format(cultureInfo, "Amount owed is {0:C}\n", Convert.ToDecimal(totalAmount / 100));
             result += String.Format("You earned {0} credits\n", volumeCredits);
-            Console.WriteLine(currentPrinter.Print(invoiceInfo));
-            Console.WriteLine(result);
-            return result;
+            
+            invoiceInfo.VolumeCredits = volumeCredits;
+
+            var res1 = currentPrinter.Print(invoiceInfo);
+            var res2 = result;
+            
+            return res1;
         }
     }
 }
