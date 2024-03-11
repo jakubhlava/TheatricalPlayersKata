@@ -15,7 +15,7 @@ namespace TheatricalPlayersRefactoringKata
             
             var  cultureInfo = new CultureInfo("en-US");
 
-            var infos = new List<PlayInfo>(); 
+            var infos = new List<PlayInfo>();
             foreach(var perf in invoice.Performances) 
             {
                 var play = plays[perf.PlayID];
